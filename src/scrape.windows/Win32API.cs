@@ -9,6 +9,11 @@ namespace scrape.windows
 {
     public class Win32API
     {
+        public static int WM_LBUTTONDOWN = 0x201;
+        public static int WM_LBUTTONUP = 0x202;
+        public static int MK_LBUTTON = 0x0001;
+        public static int GWL_STYLE = -16;
+
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint Msg, uint wParam, uint lParam);
 
@@ -39,9 +44,7 @@ namespace scrape.windows
         /// 指定した座標がスタティックテキストコントロールに重なっていた場合は、そのスタティックテキストコントロールの下にあるウィンドウのハンドルが返ります。
         /// </returns>
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern int WindowFromPoint(POINT point);
+        public static extern IntPtr WindowFromPoint(POINT point);
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINT { public int x; public int y; }
     }
 }

@@ -88,6 +88,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\scrape.windows\scrape.windows.csproj">
+      <Project>{967c360e-238a-4258-a0ea-fdbb7bfddb56}</Project>
+      <Name>scrape.windows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
